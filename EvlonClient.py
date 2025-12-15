@@ -1,3 +1,4 @@
+#Unauthorized reproduction prohibited/無断転載禁止
 import tkinter as tk
 from tkinter import ttk, messagebox
 from PIL import Image, ImageTk, ImageDraw
@@ -103,7 +104,7 @@ class ScreenOverlayApp:
         message = f"Deleted {deleted_count} files.\nFreed {total_size_mb:.2f} MB."
         self.root.after(0, lambda: self.settings_window.title("Settings"))
         messagebox.showinfo("Done", message, parent=self.settings_window)
-
+#make by　まそん
     def save_settings(self):
         os.makedirs(APP_DATA_PATH, exist_ok=True)
         with open(CONFIG_FILE, 'w') as f:
@@ -167,7 +168,7 @@ class ScreenOverlayApp:
         self.apply_settings()
         self.update_info()
         self.root.mainloop()
-
+#make by まそん
     def apply_settings(self):
         theme_name = self.settings.get("theme", "標準 (灰色)")
         colors = COLOR_THEMES.get(theme_name, COLOR_THEMES["標準 (灰色)"])
@@ -366,7 +367,7 @@ class ScreenOverlayApp:
 
         cleanup_button = ttk.Button(maintenance_frame, text="Clean Temp Files", command=self.run_cleanup_in_thread, style='TButton')
         cleanup_button.pack(pady=(5,10), padx=10, fill='x')
-        
+        #make byまそん
         def save_and_apply():
             new_hotkey = hotkey_var.get()
             if self.settings["hotkey"] != new_hotkey:
